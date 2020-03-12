@@ -91,7 +91,7 @@ All test for this boilerplate uses following tools.
 open http://localhost:7070/docs
 ```
 
-![](docs//screencapture-redoc.png)
+![](docs//redoc.png)
 
 ### Swagger Console
 
@@ -99,7 +99,7 @@ open http://localhost:7070/docs
 open http://localhost:7070/console
 ```
 
-![](docs//screencapture-swagger.png)
+![](docs//swagger.png)
 
 
 ## Contributing
