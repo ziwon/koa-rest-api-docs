@@ -36,8 +36,10 @@ const spec = generator.generateSpec({
 });
 
 exports.spec = ctx => {
+  const s = spec;
+  delete s['swagger'];
   ctx.type = 'json';
-  ctx.body = JSON.stringify(spec, null, '  ');
+  ctx.body = JSON.stringify(s, null, '  ');
 };
 
 exports.redoc = ctx => {
@@ -80,10 +82,11 @@ exports.swagger = ctx => {
 
     <script>
       window.onload = async function() {
-        const spec = await axios.get("/spec");
+        const res = await axios.get("/spec");
+        console.log(res['data']);
 
         const ui = SwaggerUIBundle({
-          spec: spec,
+          spec: res['data'],
           dom_id: '#swagger-ui',
           deepLinking: true,
           presets: [

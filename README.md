@@ -18,7 +18,7 @@ This boilerplate include the following features:
 - A super small and optimized [Docker](https://www.docker.com/) image based on [Node.js Alpine image](https://hub.docker.com/_/node/)
 - Continuous integration and delivery using [CircleCI](https://circleci.com/)
 - Unit Test and Integration Test along with Test Coverage using [Jest](https://facebook.github.io/jest/) testing framework
-- Generating API documentation
+- Generating Redoc API documentation and Swagger API console
 
 ---
 
@@ -101,7 +101,6 @@ Please contribute to this fork's awesome [original repository](https://github.co
 ## Todo
 
 - Enable Redoc API console
-- Support Swagger API documentation
 
 
 ## See Also
