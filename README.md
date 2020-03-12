@@ -10,7 +10,7 @@
 
 <br />
 
-**Koa REST API Docs** is a fork of [posquit0/koa-rest-api-boilerplate](https://github.com/posquit0/koa-rest-api-boilerplate) integrated with [koa-joi-router-docs](https://github.com/chuyik/koa-joi-router-docs) for generating ReDoc API documentation based on [joi-router](https://github.com/koajs/joi-router)
+**Koa REST API Docs** is a fork of [posquit0/koa-rest-api-boilerplate](https://github.com/posquit0/koa-rest-api-boilerplate) integrated with [koa-joi-router-docs](https://github.com/chuyik/koa-joi-router-docs) for generating Redoc API documentation and Swagger API console based on [joi-router](https://github.com/koajs/joi-router)
 
 This boilerplate include the following features:
 
