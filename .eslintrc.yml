@@ -1,0 +1,7 @@
+root: true
+extends:
+  - 'kasa'
+parserOptions:
+  sourceType: 'script'
+rules:
+  newline-per-chained-call: 0
