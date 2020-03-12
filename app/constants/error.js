@@ -3,6 +3,12 @@
 /**
  * Client Failures
  */
+module.exports.BAD_REQUEST = {
+  statusCode: 400,
+  code: 'BAD_REQUEST',
+  message: 'The requested body is not valid.'
+};
+
 module.exports.AUTH_REQUIRED = {
   statusCode: 401,
   code: 'AUTH_REQUIRED',

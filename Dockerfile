@@ -10,7 +10,7 @@
 
 ### BASE
 FROM node:10.16.0-alpine AS base
-LABEL author "Byungjin Park <ziwon.bj@gmail.com>"
+LABEL author "Byungjin Park <posquit0.bj@gmail.com>"
 LABEL maintainer "Yeongpil Yoon <yngpil.yoon@gmail.com>"
 RUN \
   # Add our own user and group to avoid permission problems

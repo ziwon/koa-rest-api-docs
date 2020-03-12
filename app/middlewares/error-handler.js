@@ -4,7 +4,7 @@ const debug = require('debug')('koa:error-handler');
 const Response = require('../utils/response');
 const { InvalidRequestBodyFormat } = require('../errors');
 const {
-  UNKNOWN_ENDPOINT, INVALID_REQUEST_BODY_FORMAT, UNKNOWN_ERROR
+  BAD_REQUEST, UNKNOWN_ENDPOINT, INVALID_REQUEST_BODY_FORMAT, UNKNOWN_ERROR
 } = require('../constants/error');
 
 
@@ -29,10 +29,20 @@ module.exports = () => {
     } catch (err) {
       debug('An error occured: %s', err.name);
 
+      if (ctx.invalid) {
+        const params = {
+          ...BAD_REQUEST,
+          data: err.details
+        };
+
+        return Response.badRequest(ctx, params);
+      }
+
       if (err instanceof InvalidRequestBodyFormat) {
         return Response.unprocessableEntity(ctx, INVALID_REQUEST_BODY_FORMAT);
       }
-      return Response.internalServerError(ctx, UNKNOWN_ERROR);
+
+     return Response.internalServerError(ctx, UNKNOWN_ERROR);
     }
   };
 };

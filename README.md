@@ -10,7 +10,7 @@
 
 <br />
 
-**Koa REST API Docs** is a fork of [ziwon/koa-rest-api-docs](https://github.com/ziwon/koa-rest-api-docs) integrated with [koa-joi-router-doc](https://github.com/chuyik/koa-joi-router-doc) for generating ReDoc API documentation based on [joi-router](https://github.com/koajs/joi-router)
+**Koa REST API Docs** is a fork of [posquit0/koa-rest-api-boilerplate](https://github.com/posquit0/koa-rest-api-boilerplate) integrated with [koa-joi-router-docs](https://github.com/chuyik/koa-joi-router-docs) for generating ReDoc API documentation based on [joi-router](https://github.com/koajs/joi-router)
 
 This boilerplate include the following features:
 
@@ -96,7 +96,7 @@ open http://localhost:7070/docs
 
 ## Contributing
 
-Please contribute to this fork's awesome [original repository](https://github.com/ziwon/koa-rest-api-docs).
+Please contribute to this fork's awesome [original repository](https://github.com/posquit0/koa-rest-api-boilerplate).
 
 ## Todo
 

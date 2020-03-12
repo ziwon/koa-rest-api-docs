@@ -1,3 +1,5 @@
+'use strict';
+
 const { SwaggerAPI } = require('koa-joi-router-docs');
 const misc = require('../routes/misc');
 const user = require('../routes/user');
