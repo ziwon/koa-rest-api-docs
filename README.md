@@ -85,13 +85,21 @@ All test for this boilerplate uses following tools.
 
 ## API docs
 
-Cnnect auto-generated api docs
+### Redoc
 
 ```
 open http://localhost:7070/docs
 ```
 
-![](docs//screencapture.png)
+![](docs//screencapture-redoc.png)
+
+### Swagger Console
+
+```
+open http://localhost:7070/console
+```
+
+![](docs//screencapture-swagger.png)
 
 
 ## Contributing

@@ -24,7 +24,7 @@ specRouter.route({
 // TODO: not working properly
 specRouter.route({
   method: 'get',
-  path: '/swagger',
+  path: '/console',
   validate: {},
   handler: SpecController.swagger
 });
