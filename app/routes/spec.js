@@ -10,22 +10,18 @@ specRouter.prefix('');
 specRouter.route({
   method: 'get',
   path: '/spec',
-  validate: {},
   handler: SpecController.spec
 });
 
 specRouter.route({
   method: 'get',
   path: '/docs',
-  validate: {},
   handler: SpecController.redoc
 });
 
-// TODO: not working properly
 specRouter.route({
   method: 'get',
   path: '/console',
-  validate: {},
   handler: SpecController.swagger
 });
 

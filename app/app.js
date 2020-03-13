@@ -44,8 +44,8 @@ class App extends Koa {
     this.use(
       cors({
         origins: corsConfig.origins,
-        allowMethods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'PATCH'],
-        allowHeaders: ['Content-Type', 'Authorization'],
+        allowMethods: ['GET', 'HEAD', 'PUT', 'POST', 'DELETE', 'PATCH', 'OPTIONS'],
+        allowHeaders: ['Content-Type', 'Authorization', 'Range'],
         exposeHeaders: ['Content-Length', 'Date', 'X-Request-Id']
       })
     );
