@@ -14,7 +14,6 @@ const spec = generator.generateSpec({
     description: 'API for creating and editing examples.',
     version: 'v1.1'
   },
-  openapi: '3.0.0',
   basePath: '/',
   tags: [{
     name: 'user',
@@ -36,10 +35,8 @@ const spec = generator.generateSpec({
 });
 
 exports.spec = ctx => {
-  const s = spec;
-  delete s['swagger'];
   ctx.type = 'json';
-  ctx.body = JSON.stringify(s, null, '  ');
+  ctx.body = JSON.stringify(spec, null, '  ');
 };
 
 exports.redoc = ctx => {
