@@ -1,4 +1,6 @@
 const router = require('koa-joi-router');
+
+const camelKey = require('../middlewares/camel-key');
 const UserController = require('../controllers/user');
 
 const userRouter = router();
@@ -39,7 +41,7 @@ userRouter.route({
       }
     }
   },
-  handler: UserController.getOne
+  handler: [camelKey(), UserController.getOne]
 });
 
 userRouter.route({
@@ -56,8 +58,9 @@ userRouter.route({
     type: 'json',
     body: Joi.object({
       username: Joi.string().alphanum().min(3).max(30).required(),
-      password: Joi.string().alphanum().min(6).max(30).required()
-    }).example({ username: 'abcdefg', password: '123123' }),
+      password: Joi.string().alphanum().min(6).max(30).required(),
+      profile_url: Joi.string().required()
+    }).example({ username: 'abcdefg', password: '123123', profile_url: 'https://picsum.photos/200/300?grayscale' }),
     output: {
       200: {
         body: {
@@ -71,7 +74,7 @@ userRouter.route({
       }
     }
   },
-  handler: UserController.postSignUp
+  handler: [camelKey(), UserController.postSignUp]
 });
 
 module.exports = userRouter;

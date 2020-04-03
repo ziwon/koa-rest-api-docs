@@ -10,7 +10,6 @@ const errorHandler = require('./middlewares/error-handler');
 const corsConfig = require('./config/cors');
 const logger = require('./logger');
 const routes = require('./routes');
-const camelKey = require('./middlewares/camel-key');
 const snakeRes = require('./middlewares/snake-res');
 
 
@@ -30,7 +29,6 @@ class App extends Koa {
   }
 
   _configureMiddlewares() {
-    this.use(camelKey());
     this.use(snakeRes());
     this.use(errorHandler());
     this.use(apmMiddleware());

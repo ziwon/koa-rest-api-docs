@@ -32,7 +32,7 @@ describe('Misc', () => {
 
       const environments = info.environments;
       expect(environments.hostname).toBe(os.hostname());
-      expect(environments.nodeVersion).toBe(process.versions['node']);
+      expect(environments.node_version).toBe(process.versions['node']);
       expect(environments.platform).toBe(`${process.platform}/${process.arch}`);
     });
   });
