@@ -1,0 +1,32 @@
+[
+  {
+    "name": "${container_name}",
+    "image": "${container_image}",
+    "essential": true,
+    "portMappings": [
+      {
+        "protocol": "tcp",
+        "containerPort": ${container_port},
+        "hostPort": ${container_port}
+      }
+    ],
+    "environment": [
+      {
+        "name": "APP",
+        "value": "${app}"
+      },
+      {
+        "name": "ENV",
+        "value": "${environment}"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/fargate/service/${app}",
+        "awslogs-region": "${region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]

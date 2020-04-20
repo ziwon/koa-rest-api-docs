@@ -1,0 +1,11 @@
+if OS.mac?
+	tap 'warrensbox/tap'
+
+	brew 'shellcheck'
+	brew 'awscli'
+	brew 'tfswitch'
+	brew 'tflint'
+	brew 'dive'
+	brew 'jq'
+	brew 'direnv'
+end
