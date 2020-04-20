@@ -71,7 +71,7 @@ plan: .check-env # Generate and show an execution plan: # make plan {project} {e
 PHONY: pull
 pull: .check-env # Get remote state to local: # make pull
 	rm -f ./$(STATE_DIR)/terraform.tfstate
-	TF_LOG=trace terraform state pull > $(THIS_DIR)/$(STATE_DIR)/terraform.tfstate
+	TF_LOG=trace terraform state pull > terraform.tfstate
 
 PHONY: apply
 ifeq (apply,$(firstword $(MAKECMDGOALS)))
@@ -116,6 +116,6 @@ check-scripts: # Lint the schell scripts: # make check-scripts
 PHONY: help
 help: # Show this help message: # make help
 	echo "Usage: make [command] [args]"
-	grep -E '^[a-zA-Z_-]+:.*?# .*$$' $(MAKEFILE_LIST) | sort | sed -e 's/: .check-env #/: #/;s/: docker-login #/: #/' | awk 'BEGIN {FS = ": # "}; {printf "\t\033[36m%-32s\033[0m \033[33m%-45s\033[0m (e.g. \033[32m%s\033[0m)\n", $$1, $$2, $$3}'
+	grep -E '^[a-zA-Z_-]+:.*?# .*$$' $(MAKEFILE_LIST) | sort | sed -e 's/: \([a-z\.\-][^ ]*\) #/: #/g' | awk 'BEGIN {FS = ": # "}; {printf "\t\033[36m%-32s\033[0m \033[33m%-45s\033[0m (e.g. \033[32m%s\033[0m)\n", $$1, $$2, $$3}'
 
 .DEFAULT_GOAL := help

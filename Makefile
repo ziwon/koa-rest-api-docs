@@ -7,7 +7,7 @@ TAG ?= latest
 
 ECR_IMAGE_URL = $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(PROJECT_NAME)-$(APP_NAME)
 
-include manifests/Makefile
+include infra/Makefile
 
 PHONY: docker-login
 docker-login: # Log in to an Amazon ECR registry: # make docker-login
