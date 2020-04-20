@@ -5,8 +5,11 @@
   <br />
   <h1>Koa REST API Docs</h1>
 </div>
-
-
+<div>
+<img src=https://img.shields.io/badge/koa-2.11.0-yellow?style=plastic&logo=npm> 
+<img src="https://img.shields.io/badge/terraform-0.12.23-blue?style=plastic&logo=terraform">
+<img src="https://img.shields.io/badge/aws-2.57.0-orange?style=plastic&logo=aws">
+</div>
 
 <br />
 
