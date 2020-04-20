@@ -1,4 +1,5 @@
-AWS_ACCOUNT_ID ?= 1234567890ab # Update this to your AWS_ACCOUNT_ID
+# Update this to your AWS_ACCOUNT_ID
+AWS_ACCOUNT_ID ?= 1234567890ab
 AWS_REGION ?= ap-northeast-2
 
 PROJECT_NAME ?= ziwon
@@ -34,6 +35,10 @@ docker-commit: # Commit current container using killed tag: # make docker-commit
 
 PHONY: docker-run
 docker-run: # Run a command in a new container: # make docker-run
+ifeq ("$(wildcard .env)","")
+	echo "Creating .env from .env.example..."
+	cp .env.example .env
+endif
 	docker run --rm -it --env-file=.env --name $(APP_NAME) -p 80:7071 $(PROJECT_NAME)-$(APP_NAME)
 
 PHONY: docker-push
