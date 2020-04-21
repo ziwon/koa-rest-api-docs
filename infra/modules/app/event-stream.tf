@@ -96,7 +96,7 @@ resource "aws_cloudwatch_dashboard" "ecs-event-stream" {
       "height": 18,
       "properties": {
         "query": "SOURCE '/aws/lambda/${var.app}-ecs-event-stream' | fields @timestamp as time, detail.desiredStatus as desired, detail.lastStatus as latest, detail.stoppedReason as reason, detail.containers.0.reason as container_reason, detail.taskDefinitionArn as task_definition\n| filter @type != \"START\" and @type != \"END\" and @type != \"REPORT\"\n| sort detail.updatedAt desc, detail.version desc\n| limit 100",
-        "region": "ap-northeast-2",
+        "region": "${var.region}",
         "title": "ECS Event Log"
       }
     }
